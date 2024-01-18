@@ -1,4 +1,4 @@
-import { useAudio } from "@/hooks/use-audio";
+import { useAudio } from "@hooks";
 import chicken from "./chicken.mp3";
 
 export const GuideUseAudio = () => {

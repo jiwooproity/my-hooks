@@ -7,7 +7,7 @@ type PropsTypes = {
 
 type ReturnTypes = [string | null, (value: string) => void, () => void];
 
-export const UseLocalStorage = (props: PropsTypes): ReturnTypes => {
+const useLocalStorage = (props: PropsTypes): ReturnTypes => {
   const { key, value } = props;
   const [token, setToken] = useState<string>(value);
 
@@ -31,3 +31,5 @@ export const UseLocalStorage = (props: PropsTypes): ReturnTypes => {
 
   return [token, setStorage, removeStorage];
 };
+
+export default useLocalStorage;

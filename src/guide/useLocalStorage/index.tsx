@@ -1,7 +1,7 @@
-import { UseLocalStorage } from "@/hooks/use-local-storage";
+import { useLocalStorage } from "@hooks";
 
 export const GuideUseLocalStorage = () => {
-  const [token, setToken, removeToken] = UseLocalStorage({
+  const [token, setToken, removeToken] = useLocalStorage({
     key: "token",
     value: "need to insert any token",
   });

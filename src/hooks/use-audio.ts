@@ -11,7 +11,7 @@ type ReturnTypes = [
   (resource: string) => void
 ];
 
-export const useAudio = (props: PropsTypes): ReturnTypes => {
+const useAudio = (props: PropsTypes): ReturnTypes => {
   const { resource } = props;
 
   const [audio, setAudio] = useState(new Audio());
@@ -37,3 +37,5 @@ export const useAudio = (props: PropsTypes): ReturnTypes => {
 
   return [audio, play, onToggle, onUpdate];
 };
+
+export default useAudio;

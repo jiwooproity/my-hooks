@@ -29,8 +29,8 @@ const useUserAgent = (): ReturnTypes => {
       case "msie":
         return "Internet Explorer";
       default:
-        const matchBrows = (b: string) => userAgent.includes(b.toLowerCase());
-        const browser = BROWSERS.find(matchBrows);
+        const match = (b: string) => userAgent.includes(b.toLowerCase());
+        const browser = BROWSERS.find(match);
         return browser || "other";
     }
   };

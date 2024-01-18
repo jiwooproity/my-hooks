@@ -29,6 +29,14 @@ const useAudio = (props: PropsTypes): ReturnTypes => {
   const [currentTime, setCurrentTime] = useState("00:00");
   const [totalTime, setTotalTime] = useState("00:00");
 
+  const onInit = () => {
+    onPause();
+    setProgress(0);
+    setCurrentTime("00:00");
+    setTotalTime("00:00");
+    audio.pause();
+  };
+
   // const onPlay = () => setPlay(true);
   const onPause = () => setPlay(false);
 
@@ -38,6 +46,8 @@ const useAudio = (props: PropsTypes): ReturnTypes => {
   };
 
   const onUpdate = (resource: string) => {
+    onInit();
+
     const audioResource = new Audio(resource);
     setAudio(audioResource);
 
@@ -57,7 +67,7 @@ const useAudio = (props: PropsTypes): ReturnTypes => {
   };
 
   useEffect(() => {
-    onUpdate(resource);
+    setAudio(new Audio(resource));
   }, [resource]);
 
   useEffect(() => {

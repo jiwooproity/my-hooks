@@ -6,6 +6,7 @@ import { GuideUseUserAgent } from "./guide/useUserAgent";
 import { GuideUseTyping } from "./guide/useTyping";
 
 import "./app.css";
+import { GuideUseIdle } from "./guide/useIdle";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/use-audio" element={<GuideUseAudio />} />
         <Route path="/use-useragent" element={<GuideUseUserAgent />} />
         <Route path="/use-typing" element={<GuideUseTyping />} />
+        <Route path="/use-idle" element={<GuideUseIdle />} />
       </Routes>
     </BrowserRouter>
   );

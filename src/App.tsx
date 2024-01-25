@@ -4,9 +4,10 @@ import { GuideUseLocalStorage } from "./guide/useLocalStorage";
 import { GuideUseAudio } from "./guide/useAudio";
 import { GuideUseUserAgent } from "./guide/useUserAgent";
 import { GuideUseTyping } from "./guide/useTyping";
+import { GuideUseIdle } from "./guide/useIdle";
+import { GuideUseBoxScroll } from "./guide/useBoxScroll";
 
 import "./app.css";
-import { GuideUseIdle } from "./guide/useIdle";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/use-useragent" element={<GuideUseUserAgent />} />
         <Route path="/use-typing" element={<GuideUseTyping />} />
         <Route path="/use-idle" element={<GuideUseIdle />} />
+        <Route path="/use-box-scroll" element={<GuideUseBoxScroll />} />
       </Routes>
     </BrowserRouter>
   );

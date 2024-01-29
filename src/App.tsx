@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import { GuideUseLoading } from "@/guide/useLoading";
 import { GuideUseLocalStorage } from "./guide/useLocalStorage";
 import { GuideUseAudio } from "./guide/useAudio";
@@ -6,14 +7,16 @@ import { GuideUseUserAgent } from "./guide/useUserAgent";
 import { GuideUseTyping } from "./guide/useTyping";
 import { GuideUseIdle } from "./guide/useIdle";
 import { GuideUseBoxScroll } from "./guide/useBoxScroll";
+import { GuideUseRealTime } from "./guide/useRealTime";
+import { MainMenu } from "./page";
 
 import "./app.css";
-import { GuideUseRealTime } from "./guide/useRealTime";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<MainMenu />} />
         <Route path="/use-loading" element={<GuideUseLoading />} />
         <Route path="/use-local-storage" element={<GuideUseLocalStorage />} />
         <Route path="/use-audio" element={<GuideUseAudio />} />

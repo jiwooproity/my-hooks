@@ -8,6 +8,7 @@ import { GuideUseIdle } from "./guide/useIdle";
 import { GuideUseBoxScroll } from "./guide/useBoxScroll";
 
 import "./app.css";
+import { GuideUseRealTime } from "./guide/useRealTime";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/use-typing" element={<GuideUseTyping />} />
         <Route path="/use-idle" element={<GuideUseIdle />} />
         <Route path="/use-box-scroll" element={<GuideUseBoxScroll />} />
+        <Route path="/use-real-time" element={<GuideUseRealTime />} />
       </Routes>
     </BrowserRouter>
   );

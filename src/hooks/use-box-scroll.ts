@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const useBoxScroll = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const [step, setStep] = useState(0);
+  // const [step, setStep] = useState(0);
 
   const onScroll = () => {
     console.log("scroll");

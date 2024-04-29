@@ -73,11 +73,14 @@ const useAudio = (props: PropsTypes): ReturnTypes => {
   useEffect(() => {
     audio.addEventListener("pause", onPause);
     audio.addEventListener("timeupdate", timeUpdate);
+  }, [audio]);
+
+  useEffect(() => {
     return () => {
       audio.removeEventListener("pause", onPause);
       audio.removeEventListener("timeupdate", timeUpdate);
     };
-  }, [audio]);
+  }, []);
 
   return [audio, progress, totalTime, currentTime, play, onToggle, onUpdate];
 };

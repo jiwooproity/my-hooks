@@ -5,7 +5,12 @@ type PropsTypes = {
   value: string; // default value
 };
 
-type ReturnTypes = [string | null, (value: string) => void, () => void];
+type ReturnTypes = [
+  string | null,
+  string | null,
+  (value: string) => void,
+  () => void
+];
 
 const useLocalStorage = (props: PropsTypes): ReturnTypes => {
   const { key, value } = props;
@@ -29,7 +34,7 @@ const useLocalStorage = (props: PropsTypes): ReturnTypes => {
     localStorage.setItem(key, value);
   }, []);
 
-  return [token, setStorage, removeStorage];
+  return [key, token, setStorage, removeStorage];
 };
 
 export default useLocalStorage;

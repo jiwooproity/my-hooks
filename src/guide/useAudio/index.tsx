@@ -115,30 +115,20 @@ const BlockBar = ({ progress }: { progress: number }) => {
     <AudioBlockBar>
       <AudioBlockPercent>{`${progress.toFixed(1)}%`}</AudioBlockPercent>
       {Array.from(Array(100 / 10), (_, i) => (i + 1) * 10).map((arr) => (
-        <AudioCurrentBar
-          key={arr}
-          className={`${arr <= progress ? "active" : ""}`}
-        />
+        <AudioCurrentBar key={arr} className={`${arr <= progress ? "active" : ""}`} />
       ))}
     </AudioBlockBar>
   );
 };
 
-const TimeStamp = ({
-  currentTime,
-  totalTime,
-}: {
-  currentTime: string;
-  totalTime: string;
-}) => {
+const TimeStamp = ({ currentTime, totalTime }: { currentTime: string; totalTime: string }) => {
   return `${currentTime} / ${totalTime}`;
 };
 
 export const GuideUseAudio = () => {
-  const [_, progress, totalTime, currentTime, play, onToggle, onUpdate] =
-    useAudio({
-      resource: song,
-    });
+  const [, progress, totalTime, currentTime, play, onToggle, onUpdate] = useAudio({
+    resource: song,
+  });
 
   return (
     <Container>
@@ -148,12 +138,8 @@ export const GuideUseAudio = () => {
         <TimeStamp currentTime={currentTime} totalTime={totalTime} />
         <AudioToggle onClick={onToggle}>{play ? "Pause" : "Play"}</AudioToggle>
         <AudioChangeBtnWrapper>
-          <AudioChangeBtn onClick={() => onUpdate(song)}>
-            Song No.1
-          </AudioChangeBtn>
-          <AudioChangeBtn onClick={() => onUpdate(song2)}>
-            Song No.2
-          </AudioChangeBtn>
+          <AudioChangeBtn onClick={() => onUpdate(song)}>Song No.1</AudioChangeBtn>
+          <AudioChangeBtn onClick={() => onUpdate(song2)}>Song No.2</AudioChangeBtn>
         </AudioChangeBtnWrapper>
       </AudioController>
     </Container>
